@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 let config = {
     resolve: {
@@ -63,12 +64,16 @@ module.exports = (env, options) => {
     config.mode = options.mode || 'production';
 
     if (config.mode === "production") {
-        config.plugins.push(new CleanWebpackPlugin())
-        config.plugins.push(new CopyWebpackPlugin({
-            patterns: [
-                {from: "favicon.ico"},
-            ],
-        }),)
+        config.plugins.push(
+            new CleanWebpackPlugin(),
+            new CopyWebpackPlugin({
+                patterns: [
+                    {from: "favicon.ico"},
+                ],
+            }),
+            new FaviconsWebpackPlugin(),
+
+        )
 
         config.optimization = {
             minimize: true,
