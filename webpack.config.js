@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
 
 let config = {
@@ -63,6 +64,11 @@ module.exports = (env, options) => {
 
     if (config.mode === "production") {
         config.plugins.push(new CleanWebpackPlugin())
+        config.plugins.push(new CopyWebpackPlugin({
+            patterns: [
+                {from: "favicon.ico"},
+            ],
+        }),)
 
         config.optimization = {
             minimize: true,
@@ -73,7 +79,7 @@ module.exports = (env, options) => {
             ],
         }
     } else {
-        // config.module.rules[2].use[1].options.modules.localIdentName = "[local]"
+        config.module.rules[2].use[1].options.modules.localIdentName = "[local]"
     }
 
     return config
