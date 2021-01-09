@@ -1,0 +1,41 @@
+@use "css/constants";
+
+$square-ratio: 10%;
+
+.leaderboard {
+  //width: constants.$sidebar-width;
+  display: grid;
+  grid-template-columns: $square-ratio auto min-content 3%;
+  font-size: constants.size(32);
+  .even {
+    background: #fff;
+  }
+
+  .odd {
+    background: #f6f6f6;
+  }
+
+}
+
+
+.leaderboardColor {
+  //height: $square-size;
+  padding-bottom: 100%;
+  //width: $square-size;
+}
+
+.leaderboardName {
+  text-align: center;
+  //line-height: constants.size(8);
+  //line-height: 190%;
+
+  flex: 1;
+}
+
+.leaderboardMoney {
+  text-align: right;
+  //line-height: 190%;
+
+  //line-height: 2.4vmin;
+
+}

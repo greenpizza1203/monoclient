@@ -1,0 +1,9 @@
+$square-size: min(100vh, 56.25vw);
+$sidebar-width: calc(#{$square-size} * (350 / 900));
+@function square($value) {
+  @return calc(#{$square-size} * #{$value})
+}
+
+@function size($value) {
+  @return calc(#{square($value)} * 0.001)
+}

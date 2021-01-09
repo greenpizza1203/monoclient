@@ -1,0 +1,56 @@
+.bar {
+  bottom: 0;
+  height: 20%;
+  position: absolute;
+  width: 100%;
+}
+
+.level {
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+
+}
+
+.houses {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 3%;
+  margin-right: 3%;
+
+  .house {
+    width: 24%;
+  }
+
+  .hotel {
+    width: 96%;
+  }
+}
+
+.ui {
+  height: 100%;
+  width: 100%;
+  display: none;
+  font-size: 150%;
+
+  img {
+    border-radius: 50%;
+    width: 30%;
+    cursor: pointer;
+    margin: auto;
+    vertical-align: bottom;
+  }
+
+}
+
+
+.bar:hover .houses {
+  display: none;
+}
+
+.bar:hover .ui {
+  display: flex;
+}
+

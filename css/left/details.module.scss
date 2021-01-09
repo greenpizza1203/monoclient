@@ -1,0 +1,29 @@
+@use 'css/constants';
+
+
+.details {
+  border-radius: constants.size(20);
+  border: constants.size(16) solid;
+
+  transition: border-color 0.2s;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  box-sizing: border-box;
+
+}
+
+.title {
+  font-size: constants.size(35);
+  text-align: center;
+  font-weight: bold;
+}
+
+.specs {
+  white-space: pre;
+  font-size: constants.size(30);
+  padding-top: 5%;
+  padding-left: 5%;
+
+}
