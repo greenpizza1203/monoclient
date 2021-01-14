@@ -1,9 +1,9 @@
 import {IPlayer, IState} from "monocommon";
-import React from "react";
+import React, {Component} from "react";
 import {formatMoney} from "../utils/FormatMoney";
 import * as styles from '../../css/left/leaderboard.module.scss';
 
-export class Leaderboard extends React.Component<{ info: IState, onMouseOver: (target: IPlayer) => void }> {
+export class Leaderboard extends Component<{ info: IState, onMouseOver: (target: IPlayer) => void }> {
     render() {
         let info = this.props.info;
         return (
@@ -17,7 +17,7 @@ export class Leaderboard extends React.Component<{ info: IState, onMouseOver: (t
     }
 }
 
-export class LeaderboardRow extends React.Component<{ player: IPlayer, parity: boolean, onMouseOver: (IPlayer) => void }> {
+export class LeaderboardRow extends Component<{ player: IPlayer, parity: boolean, onMouseOver: (IPlayer) => void }> {
     render() {
         let player = this.props.player;
         let mouseOver = () => this.props.onMouseOver(player);

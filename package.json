@@ -5,7 +5,8 @@
   "scripts": {
     "start": "webpack serve --mode development",
     "build:prod": "webpack",
-    "build:dev": "webpack --mode development"
+    "build:dev": "webpack --mode development",
+    "build:profile": "webpack  --profile --json > stats.json"
   },
   "dependencies": {
     "@types/copy-webpack-plugin": "^6.4.0",

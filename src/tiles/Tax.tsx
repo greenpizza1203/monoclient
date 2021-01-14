@@ -1,17 +1,17 @@
-import React from "react";
+import React, {Component} from "react";
 import {DefaultTile} from "./DefaultTile";
 import {ITax} from "monocommon";
 import {formatMoney} from "../utils/FormatMoney";
 
-export class Tax extends DefaultTile {
-
-    getTile(info: ITax) {
+export class Tax extends Component<{ tile: ITax }> {
+    render() {
+        const tile = this.props.tile;
         return (
-            <div className="tile">
-                {this.getTitle()}
-                {formatMoney(info.fine)}
-            </div>
+            <DefaultTile tile={tile}>
+                {formatMoney(tile.fine)}
+            </DefaultTile>
         )
     }
+
 
 }

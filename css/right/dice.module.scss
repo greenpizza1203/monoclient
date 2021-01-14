@@ -1,0 +1,30 @@
+@use 'css/constants';
+
+.dice {
+  //height: 200px;
+  position: absolute;
+  height: 0;
+  padding-bottom: 60%;
+}
+
+.roll {
+  display: block;
+  //margin: auto;
+  width: 30%;
+  height: 5%;
+  margin: 60% auto auto auto;
+  font-size: constants.size(20);
+  padding: 0;
+  //vertical-align: center;
+  //lin
+  //margin-top: 20%;
+  //margin-left: auto;
+  //margin-right: auto;
+  //width: 30%;
+  //background: red;
+  //background-image: linear-gradient(to right, green 0%, blue 100%);
+  //opacity: 0.2;
+  //transition: opacity 0.2s;
+  //border: 0;
+}
+

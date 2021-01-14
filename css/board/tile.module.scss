@@ -1,19 +1,14 @@
 @use 'css/constants';
 
 
-.container.even {
-  background: #f6f6f6;
-}
-
-.container.odd {
-  background: #ededed;
+.board {
+  @include constants.parity(#f6f6f6, #ededed);
 }
 
 .tile {
   $tile-ratio: 0.15;
   width: constants.square((1 - ($tile-ratio) * 2) / 9);
   height: constants.square($tile-ratio);
-  box-sizing: border-box;
   text-align: center;
   position: relative;
   top: 50%;

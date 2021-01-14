@@ -10,7 +10,6 @@
   position: absolute;
   bottom: 0;
   height: 50%;
-  box-sizing: border-box;
 
 }
 
@@ -21,9 +20,18 @@
 }
 
 .specs {
-  white-space: pre;
+  //white-space: pre;
+  display: grid;
+  grid-template-columns: auto min-content;
   font-size: constants.size(30);
-  padding-top: 5%;
-  padding-left: 5%;
+  padding: 5%;
 
+  span {
+    white-space: nowrap;
+  }
+
+  .value {
+    text-align: right;
+  }
 }
+

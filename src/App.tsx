@@ -1,28 +1,30 @@
 import {IPlayer, IState, ITile} from "monocommon";
-import React from "react";
-import {Board} from "./Board";
+import React, {Component} from "react";
+import {Board} from "./board/Board";
 import {Details} from "./sidebar/Details";
 import {Leaderboard} from "./sidebar/Leaderboard";
 import {Dice} from "./sidebar/Dice";
-import {leftSidebar} from "../css/left/left_sidebar.module.scss"
-import {rightSidebar} from "../css/right/right_sidebar.module.scss"
 import {info} from "./info";
 import * as styles from "../css/App.module.scss"
-export class App extends React.Component<{ info: IState }, { target: IPlayer | ITile }> {
-    state = {target: info.tiles[29]}
+import {TradeMenu} from "./sidebar/trade/TradeMenu";
+
+export class App extends Component<{ info: IState }, { target: IPlayer | ITile }> {
+    state = {
+        //todo:remove this
+        target: info.tiles.find(tile=>tile.type=="Utility")
+    }
 
     render() {
         return (
             <div className={styles.app}>
-                <div className={leftSidebar}>
+                <div className={styles.sidebar}>
                     <Leaderboard info={this.props.info} onMouseOver={this.onMouseOver}/>
                     <Details target={this.state.target}/>
                 </div>
                 <Board info={this.props.info} mouseOver={this.onMouseOver}/>
-                <div className={rightSidebar}>
-                    {/*<Leaderboard info={this.props.info} onMouseOver={this.onMouseOver}/>*/}
-                    {/*<Details target={this.state.target}/>*/}
+                <div className={styles.sidebar}>
                     <Dice/>
+                    <TradeMenu/>
                 </div>
 
             </div>

@@ -1,26 +1,27 @@
 import {ITile} from "monocommon";
-import React from "react";
+import React, {Component} from "react";
 import {Street} from "./street/Street";
 import {Tax} from "./Tax";
 import {DefaultTile} from "./DefaultTile";
 import {Corner} from "./Corner";
 import * as styles from "../../css/board/tile.module.scss"
+import {Railroad} from "./Railroad";
 
 const componentMap = {
-    Street, Tax, Corner
+    Street, Tax, Corner,Railroad
 }
 
-export class Tile extends React.Component<{ info: ITile, mouseOver: (ITile) => void }> {
+export class Tile extends Component<{ info: ITile, mouseOver: (ITile) => void }> {
     render() {
         const info = this.props.info;
         const {column, row, location} = getTilePosition(info.position)
         const parity = info.position % 2 ? 'odd' : 'even';
         const TileType = componentMap[info.type] ?? DefaultTile;
         return (
-            <div className={`${styles.container} ${styles[location]} ${styles[parity]}`}
+            <div className={`${styles[location]} ${styles[parity]}`}
                  style={{gridColumn: column, gridRow: row}}
                  onMouseOver={() => this.props.mouseOver(this.props.info)}>
-                <TileType info={info}/>
+                <TileType tile={info}/>
             </div>
         );
     }

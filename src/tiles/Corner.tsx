@@ -1,5 +1,5 @@
 import {ICorner} from "monocommon";
-import React from "react";
+import React, {Component} from "react";
 import pass_go from "../../assets/images/corners/pass_go.svg"
 import go_to_jail from "../../assets/images/corners/go_to_jail.svg"
 import in_jail from "../../assets/images/corners/in_jail.svg"
@@ -21,9 +21,9 @@ const styleNames = {
 }
 
 
-export abstract class Corner extends React.Component<{ info: ICorner }> {
+export abstract class Corner extends Component<{ tile: ICorner }> {
     render() {
-        let filename = this.props.info.split_name;
+        let filename = this.props.tile.split_name;
         let Corner = corners[filename];
         let className = styleNames[filename]
         // console.log(className)

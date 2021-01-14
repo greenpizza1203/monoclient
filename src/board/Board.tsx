@@ -1,9 +1,9 @@
 import {IState} from "monocommon";
-import React from "react";
-import {Tile} from "./tiles/Tile";
-import * as styles from "../css/board/board.module.scss"
+import React, {Component} from "react";
+import {Tile} from "../tiles/Tile";
+import * as styles from "../../css/board/board.module.scss"
 
-export class Board extends React.Component<{ info: IState, mouseOver: (IPlayer) => void }> {
+export class Board extends Component<{ info: IState, mouseOver: (IPlayer) => void }> {
 
     render() {
         const tiles = this.props.info.tiles

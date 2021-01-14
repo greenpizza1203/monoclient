@@ -1,9 +1,17 @@
+@use "constants";
+
 .app {
-  position: relative;
-  width: min(100vw, 177.78vh);
-  height: min(100vh, 56.25vw);
-  margin: auto;
-  background: pink;
   display: flex;
-  flex-direction: row;
+  width: min(100vw, 177.78vh);
+  height: constants.$square-size;
+  margin: auto;
+  //background: pink;
+
+
+}
+
+
+.sidebar {
+  position: relative;
+  flex: 1;
 }

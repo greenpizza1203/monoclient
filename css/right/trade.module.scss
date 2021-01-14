@@ -1,0 +1,38 @@
+@use 'css/constants';
+
+.menu {
+  position: absolute;
+  bottom: 0;
+  height: 50%;
+  width: 100%;
+}
+
+.buttons {
+  position: absolute;
+
+  display: flex;
+  bottom: 0;
+
+  height: 10%;
+  width: 100%;
+}
+
+.button {
+  float: left;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  border-radius: constants.size(5);
+  font-size: constants.size(25);
+  flex: 1;
+  border: constants.size(4) solid black;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.row {
+  height: 200px;
+}
+.header{
+  height: 10%;
+}

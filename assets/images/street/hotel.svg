@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="0 0 96 36" xmlns="http://www.w3.org/2000/svg">
 
-    <rect style="stroke-width: 2px; fill: none; stroke: rgb(255, 255, 255);" y="2" x="4" width="88" height="32"
+    <rect stroke="white" stroke-width="2px" fill="none" y="2" x="4" width="88" height="32"
           rx="10" ry="10"/>
-    <text transform=""
-          style="fill: white; font-weight:bold; font-family: FuturaFuturisC; font-size: 22px;"
-          x="14" y="25.5">HOTEL
+    <text
+            fill="white"
+            font-weight="bold" font-family="arial" font-size="22px"
+            x="11.3" y="25.5">
+        HOTEL
     </text>
 </svg>

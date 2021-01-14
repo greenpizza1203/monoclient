@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const TerserPlugin = require("terser-webpack-plugin");
-const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 
 let config = {
     resolve: {
@@ -56,10 +55,18 @@ let config = {
     devtool: false,
     performance: {hints: false},
     plugins: [],
+    optimization: {
+        minimizer: [
+            new TerserPlugin({
+                extractComments: false,
+            }),
+        ],
+    },
     devServer: {stats: "minimal"},
 };
 module.exports = (env, options) => {
-    config.plugins.push(new HtmlWebpackPlugin());
+
+    config.plugins.push(new HtmlWebpackPlugin({favicon: "./favicon.ico"}));
 
     config.mode = options.mode || 'production';
 
@@ -71,18 +78,8 @@ module.exports = (env, options) => {
                     {from: "favicon.ico"},
                 ],
             }),
-            new FaviconsWebpackPlugin(),
-
         )
 
-        config.optimization = {
-            minimize: true,
-            minimizer: [
-                new TerserPlugin({
-                    extractComments: false,
-                }),
-            ],
-        }
     } else {
         config.module.rules[2].use[1].options.modules.localIdentName = "[local]"
     }

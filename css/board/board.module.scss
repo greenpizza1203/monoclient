@@ -1,14 +1,13 @@
 @use "css/constants";
 
 .board {
-
-  //width: constants.$square-size;
-  //height: constants.$square-size;
+  width: (9/16)*100%;
   display: grid;
   $bigDim: constants.square(0.15);
   $smallDim: constants.square(0.7/9);
-  grid-template-columns: $bigDim repeat(9, $smallDim) $bigDim;
-  grid-template-rows: $bigDim repeat(9, $smallDim) $bigDim;
+
+  grid-template-columns: 15% repeat(9, 70%*(1/9)) 15%;
+  grid-template-rows: 15% repeat(9, 70%*(1/9)) 15%;
 }
 
 

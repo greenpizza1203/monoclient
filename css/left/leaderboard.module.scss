@@ -3,7 +3,6 @@
 $square-ratio: 10%;
 
 .leaderboard {
-  //width: constants.$sidebar-width;
   display: grid;
   grid-template-columns: $square-ratio auto min-content 3%;
   font-size: constants.size(32);

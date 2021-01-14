@@ -1,22 +1,22 @@
-import React from "react";
+import React, {Component} from "react";
 import {Houses, HouseUI} from "./HouseUI";
 import {DefaultTile} from "../DefaultTile";
 import {IStreet} from "monocommon";
-import {tile} from "../../../css/board/tile.module.scss"
 import * as styles from "../../../css/board/street.module.scss"
-export class Street extends DefaultTile {
+
+export class Street extends Component<{ tile: IStreet }> {
 
     render() {
+        let tile = this.props.tile;
         return (
-            <div className={tile}>
-                {this.getTitle()}
-                <Bar info={this.props.info as IStreet}/>
-            </div>
+            <DefaultTile tile={tile}>
+                <Bar info={tile}/>
+            </DefaultTile>
         )
     }
 }
 
-export class Bar extends React.Component<{ info: IStreet }> {
+export class Bar extends Component<{ info: IStreet }> {
     render() {
 
         const info = this.props.info;
