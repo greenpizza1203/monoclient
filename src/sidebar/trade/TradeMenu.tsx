@@ -32,7 +32,7 @@ export class TradeMenu extends Component<void, TradeMenuState> {
         this.setState({stage: "all"})
     }
     setTrade = (trade: ITrade) => {
-        this.setState({stage: "single", tradeTarget})
+        // this.setState({stage: "single", tradeTarget})
     }
 }
 

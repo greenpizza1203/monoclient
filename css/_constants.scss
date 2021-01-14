@@ -9,10 +9,11 @@ $square-size: min(100vh, 56.25vw);
 }
 
 @mixin parity($light,$dark) {
-  .even {
-    background: $light
-  }
-  .odd {
-    background: $dark
-  }
+    .even {
+      background: $light
+    }
+
+    .odd {
+      background: $dark
+    }
 }

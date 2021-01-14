@@ -24,7 +24,7 @@ export class App extends Component<{ info: IState }, { target: IPlayer | ITile }
                 <Board info={this.props.info} mouseOver={this.onMouseOver}/>
                 <div className={styles.sidebar}>
                     <Dice/>
-                    <TradeMenu/>
+                    {/*<TradeMenu/>*/}
                 </div>
 
             </div>

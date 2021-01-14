@@ -15,7 +15,9 @@ export class Tile extends Component<{ info: ITile, mouseOver: (ITile) => void }>
     render() {
         const info = this.props.info;
         const {column, row, location} = getTilePosition(info.position)
+        // console.log(styles)
         const parity = info.position % 2 ? 'odd' : 'even';
+        // console.log(styles[parity])
         const TileType = componentMap[info.type] ?? DefaultTile;
         return (
             <div className={`${styles[location]} ${styles[parity]}`}
