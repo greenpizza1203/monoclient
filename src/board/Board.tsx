@@ -3,7 +3,7 @@ import React, {Component} from "react";
 import {Tile} from "../tiles/Tile";
 import * as styles from "../../css/board/board.module.scss"
 
-export class Board extends Component<{ info: IState, mouseOver: (IPlayer) => void }> {
+export class Board extends Component<{ info: IState, mouseOver: (ITile) => void }> {
 
     render() {
         const tiles = this.props.info.tiles

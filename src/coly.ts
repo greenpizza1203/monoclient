@@ -2,7 +2,7 @@ import {Room} from "colyseus.js";
 import {IAuction, IPlayer, IState} from "monocommon";
 
 export let roomRef: Room;
-export let info: State;
+export let coly: State;
 export declare class State extends IState {
     myTurn: boolean
     myId: string
@@ -54,7 +54,7 @@ function addStateGetters(state: IState) {
 export function setRoom(room: Room<State>) {
     addStateGetters(room.state);
     roomRef = room;
-    info = room.state;
+    coly = room.state;
     // roomRef.onStateChange(() => {
         // listener.emit('state')
     // })

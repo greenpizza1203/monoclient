@@ -5,19 +5,20 @@ import {Tax} from "./Tax";
 import {DefaultTile} from "./DefaultTile";
 import {Corner} from "./Corner";
 import * as styles from "../../css/board/tile.module.scss"
+import {Property} from "./Property";
 import {Railroad} from "./Railroad";
+import {Utility} from "./Utility";
 
 const componentMap = {
-    Street, Tax, Corner,Railroad
+    Street, Railroad, Utility, Tax, Corner, Property
 }
+
 
 export class Tile extends Component<{ info: ITile, mouseOver: (ITile) => void }> {
     render() {
         const info = this.props.info;
         const {column, row, location} = getTilePosition(info.position)
-        // console.log(styles)
         const parity = info.position % 2 ? 'odd' : 'even';
-        // console.log(styles[parity])
         const TileType = componentMap[info.type] ?? DefaultTile;
         return (
             <div className={`${styles[location]} ${styles[parity]}`}
@@ -28,6 +29,7 @@ export class Tile extends Component<{ info: ITile, mouseOver: (ITile) => void }>
         );
     }
 }
+
 
 export function getTilePosition(i) {
     if (i < 10) {

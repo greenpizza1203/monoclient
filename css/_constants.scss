@@ -1,5 +1,5 @@
 $square-size: min(100vh, 56.25vw);
-
+$tile-ratio: 0.15;
 @function square($value) {
   @return calc(#{$square-size} * #{$value})
 }

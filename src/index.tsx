@@ -3,7 +3,7 @@ import {Client} from "monofake"
 import React from "react";
 import ReactDOM from "react-dom";
 import {App} from "./App";
-import {setRoom} from "./info";
+import {setRoom} from "./coly";
 
 const node = document.createElement("div")
 node.id = "root";

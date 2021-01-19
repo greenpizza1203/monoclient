@@ -1,0 +1,23 @@
+.cap {
+  //
+  $height: percentage(20/135);
+  //$xCorner: (135/70)*$height;
+  //  //$xCorner: 27px;
+  //  clip-path: polygon(
+  //                  0% 100%,
+  //                  $xCorner 0%,
+  //                  calc(100% - #{$xCorner}) 0%,
+  //                  100% 100%);
+  top: -$height;
+  height: $height;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  font-weight: normal;
+  //  display: flex;
+  //  align-items: center;
+  //  justify-content: center;
+  //
+}
+
+//

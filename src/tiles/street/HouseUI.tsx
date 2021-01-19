@@ -3,8 +3,6 @@ import {IStreet} from "monocommon"
 import {array} from "../../utils";
 import hotel from '../../../assets/images/street/hotel.svg';
 import house from '../../../assets/images/street/house.svg';
-import upgrade from '../../../assets/images/street/upgrade.svg';
-import downgrade from '../../../assets/images/street/downgrade.svg';
 import * as styles from "../../../css/board/street.module.scss"
 
 export class HouseUI extends Component<{ info: IStreet }> {
@@ -44,12 +42,18 @@ export class Houses extends Component<{ level: number }> {
 
 class HouseUIButton extends Component<{ action, info: IStreet }> {
     render() {
-        const Image = (this.props.action == "upgrade") ? upgrade : downgrade
         return (
-            <Image/>
+            <svg viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="11" stroke="white" strokeWidth="2" fill="none" onClick={() => this.onClick()}
+                        pointerEvents="all" cursor="pointer"/>
+                <rect x="6" y="11" width="12" height="2" fill="white"/>
+                {this.props.action == 'upgrade' && <rect x="11" y="6" width="2" height="12" fill="white"/>}
+            </svg>
         )
     }
+
     onClick = () => {
-        console.log(this.props)
+        console.log(this.props.action)
     };
 }
+

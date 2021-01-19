@@ -8,14 +8,13 @@ export class TradeList extends Component {
     render() {
         return (
             <>
-                <TradeHeader title="Trades"/>
+
             </>
         );
     }
 
 
 }
-
 
 
 export class TradeRow extends Component {

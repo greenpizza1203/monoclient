@@ -6,9 +6,8 @@
 }
 
 .tile {
-  $tile-ratio: 0.15;
-  width: constants.square((1 - ($tile-ratio) * 2) / 9);
-  height: constants.square($tile-ratio);
+  width: constants.square((1 - (constants.$tile-ratio) * 2) / 9);
+  height: constants.square(constants.$tile-ratio);
   text-align: center;
   position: relative;
   top: 50%;

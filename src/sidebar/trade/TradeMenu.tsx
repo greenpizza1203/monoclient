@@ -21,9 +21,9 @@ export class TradeMenu extends Component<void, TradeMenuState> {
     render() {
         return (
             <div className={styles.menu}>
-                <TradeHeader title="All Trades"/>
+                <TradeHeader>{"All Trades"}</TradeHeader>
                 <TradeList/>
-                {/*<TradeButtons stage={this.state.stage} setStage={this.setStage}/>*/}
+                <TradeButtons stage={this.state.stage} setStage={() => this.setStage()}/>
             </div>
         )
     }
@@ -36,8 +36,8 @@ export class TradeMenu extends Component<void, TradeMenuState> {
     }
 }
 
-export class TradeHeader extends Component<{ title: string }> {
+export class TradeHeader extends Component {
     render() {
-        return <div className={styles.header}>{this.props.title}</div>
+        return <div className={styles.header}>{this.props.children}</div>
     }
 }

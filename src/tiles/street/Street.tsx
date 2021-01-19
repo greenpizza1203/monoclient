@@ -3,15 +3,16 @@ import {Houses, HouseUI} from "./HouseUI";
 import {DefaultTile} from "../DefaultTile";
 import {IStreet} from "monocommon";
 import * as styles from "../../../css/board/street.module.scss"
+import {Property} from "../Property";
 
 export class Street extends Component<{ tile: IStreet }> {
 
     render() {
         let tile = this.props.tile;
         return (
-            <DefaultTile tile={tile}>
+            <Property tile={tile}>
                 <Bar info={tile}/>
-            </DefaultTile>
+            </Property>
         )
     }
 }

@@ -33,6 +33,27 @@
 .row {
   height: 200px;
 }
-.header{
+
+.header {
   height: 10%;
+}
+
+.section {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  bottom: 0;
+}
+
+.grid {
+  display: grid;
+  height: percentage(183.75/270);
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(7, 1fr);
+  justify-items: center;
+  align-items: center;
+
+  svg {
+    height: 95%;
+  }
 }

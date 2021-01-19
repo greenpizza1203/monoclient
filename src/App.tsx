@@ -4,14 +4,14 @@ import {Board} from "./board/Board";
 import {Details} from "./sidebar/Details";
 import {Leaderboard} from "./sidebar/Leaderboard";
 import {Dice} from "./sidebar/Dice";
-import {info} from "./info";
+import {coly} from "./coly";
 import * as styles from "../css/App.module.scss"
-import {TradeMenu} from "./sidebar/trade/TradeMenu";
+import {TradeSection} from "./sidebar/trade/TradeSection";
 
 export class App extends Component<{ info: IState }, { target: IPlayer | ITile }> {
     state = {
         //todo:remove this
-        target: info.tiles.find(tile=>tile.type=="Utility")
+        target: coly.tiles.find(tile => tile.type == "Utility")
     }
 
     render() {
@@ -25,13 +25,14 @@ export class App extends Component<{ info: IState }, { target: IPlayer | ITile }
                 <div className={styles.sidebar}>
                     <Dice/>
                     {/*<TradeMenu/>*/}
+                    <TradeSection trade={coly.activeTrades[1]} playerA={true} mouseOver={this.onMouseOver}/>
                 </div>
 
             </div>
         )
     }
 
-    onMouseOver = (target: IPlayer) => {
+    onMouseOver = (target: ITile | IPlayer) => {
         this.setState({target})
     };
 }
